@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -6,6 +7,10 @@ var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
@@ -23,6 +28,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // node_modules/dotenv/package.json
 var require_package = __commonJS({
@@ -4202,6 +4208,11 @@ var require_src = __commonJS({
 });
 
 // index.ts
+var notion_app_exports = {};
+__export(notion_app_exports, {
+  main: () => main
+});
+module.exports = __toCommonJS(notion_app_exports);
 var dotenv = __toESM(require_main());
 var import_client = __toESM(require_src());
 dotenv.config();
@@ -4209,26 +4220,12 @@ var main = async () => {
   const notion = new import_client.Client({
     auth: process.env.NOTION_API_KEY
   });
-  const response = await notion.databases.create({
-    parent: {
-      page_id: "48110f6d81064663ab90f44f39b4e63d"
-    },
-    properties: {
-      Name: {
-        title: {}
-      },
-      Description: {
-        rich_text: {}
-      }
-    },
-    title: [
-      {
-        text: {
-          content: "My new database"
-        }
-      }
-    ]
-  });
+  const response = await notion.users.list({});
   console.log(response);
 };
+console.log("start");
 main();
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  main
+});

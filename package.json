@@ -2,11 +2,14 @@
   "name": "notion-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.ts --bundle --platform=node",
+    "build": "esbuild index.ts --bundle --platform=node --outfile=index.js",
     "dev": "esbuild index.ts --bundle --platform=node --outfile=index.js && node index.js"
+  },
+  "bin": {
+    "sup": "index.js"
   },
   "keywords": [],
   "author": "Haruki Tosa <13haruki28@gmail.com> (https://twitter.com/tosa_now)",
