@@ -8,7 +8,12 @@ dotenv.config()
  */
 const databaseID = ""
 const main = async () => {
-  const notion = new Client({
+  const notion = 
+  
+ 
+ 
+ 
+  new Client({
     auth: process.env.NOTION_API_KEY,
   })
   const response = await notion.pages.create({
@@ -16,7 +21,6 @@ const main = async () => {
       database_id: databaseID,
     },
     properties: {
-gs
       Name: {
         title: [
           {
