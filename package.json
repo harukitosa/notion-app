@@ -5,8 +5,11 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.ts --bundle --platform=node --outfile=index.js",
-    "dev": "esbuild index.ts --bundle --platform=node --outfile=index.js && node index.js"
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=index.js",
+    "dev": "esbuild src/index.ts --bundle --platform=node --outfile=index.js && node index.js",
+    "lint": "eslint src/**/*.ts",
+    "pretty": "prettier --write \"src/**/*.ts\"",
+    "format": "eslint src/**/*.ts --fix"
   },
   "bin": {
     "sup": "index.js"
@@ -20,6 +23,15 @@
     "esbuild": "0.17.4"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run pretty"
+    }
   }
 }
