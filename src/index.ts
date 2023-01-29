@@ -17,9 +17,9 @@ const main = async () => {
         },
         properties: {
             Name: {
-                         title: [
+                title: [
                     {
-                        text: {
+                                    text: {
                             content: "Tuscan Kale",
                         },
                     },
