@@ -4202,11 +4202,11 @@ var require_src = __commonJS({
   }
 });
 
-// index.ts
+// src/index.ts
 var dotenv = __toESM(require_main());
 var import_client = __toESM(require_src());
 dotenv.config();
-var databaseID = "e4be314a01a545f896d252c9b361723d";
+var databaseID = "";
 var main = async () => {
   const notion = new import_client.Client({
     auth: process.env.NOTION_API_KEY
@@ -4216,20 +4216,20 @@ var main = async () => {
       database_id: databaseID
     },
     properties: {
-      "Name": {
-        "title": [
+      Name: {
+        title: [
           {
-            "text": {
-              "content": "Tuscan Kale"
+            text: {
+              content: "Tuscan Kale"
             }
           }
         ]
       },
-      "Description": {
-        "rich_text": [
+      Description: {
+        rich_text: [
           {
-            "text": {
-              "content": "A dark green leafy vegetable"
+            text: {
+              content: "A dark green leafy vegetable"
             }
           }
         ]
@@ -4238,4 +4238,5 @@ var main = async () => {
   });
   console.log(response);
 };
+console.log(`app started`);
 main();
