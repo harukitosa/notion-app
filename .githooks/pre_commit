@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
+echo "helloworld"
 npm run format && npm run pretty
