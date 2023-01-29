@@ -13,7 +13,7 @@ const main = async () => {
     })
     const response = await notion.pages.create({
         parent: {
-                                    database_id: databaseID,
+                                        database_id: databaseID,
         },
         properties: {
             Name: {     
