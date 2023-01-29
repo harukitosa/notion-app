@@ -39,5 +39,5 @@ const main = async () => {
     console.log(response)
 }
 
-console.log("apx")
+console.log("apxd")
 main()
