@@ -26,9 +26,9 @@ const main = async () => {
                 ],
             },
             Description: {
-                                     rich_text: [
+                rich_text: [
                     {
-                        text: {
+                                            text: {
                             content: "A dark green leafy vegetable",
                         },
                     },
@@ -39,16 +39,5 @@ const main = async () => {
     console.log(response)
 }
 
-console.log(`app start
-
-
-
-
-
-
-
-
-
-
-ed`)
+console.log("app started")
 main()
